@@ -1,0 +1,49 @@
+<div  ng-controller="buradCtrl">
+
+<div class="page-header">
+		<h1 style="text-align:center">Trenutno stanje</h1>
+	</div>
+
+
+<!-- <span ng-show="bre">Auto sa najmanjom potrosnjom : {{autaa.model}}</span> -->
+<div class="btn-group" style="margin-left:80%">
+		
+	</div>
+	<table class="table table-bordered table-striped">
+		<thead>
+			<tr>
+			<th style="border:none">Id</th>
+				<th style="border:none">Naziv</th>
+				<th style="border:none">Tezina</th>
+				<th style="border:none">Stiglo</th>
+				<th style="border:none">Kacenje</th>
+				<th style="border:none">Istoceno</th>
+				<th style="border:none">Tezina(prazno)</th>
+				<th style="border:none">Otpis</th>
+				<th style="border:none">Dani</th>
+				<th style="border:none">Prazno</th>
+				<th style="border:none"><button ng-disabled="page == 0" ng-click="go(-1)" class="btn btn-primary">Prethodna</button></th>
+				<th style="border:none"><button ng-disabled="page == totalPages - 1" ng-click="go(1)" class="btn btn-primary">Sledeća</button></th>
+	     	</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="b in praznoca">
+				<td style="border:none">{{b.id}}</td>
+				<td style="border:none">{{b.naziv}}</td>
+				<td style="border:none">{{b.tezina}}</td>
+				<td style="border:none">{{b.stigloS}}</td>
+				<td style="border:none">{{b.kacenjeS}}</td>
+				<td style="border:none">{{b.istocenoS}}</td>
+				<td style="border:none">{{b.tezinaPrazno}}</td>
+				<td style="border:none">{{b.otpis | number:1}}</td>
+				<td style="border:none">{{b.dani}}</td>
+				<td style="border:none">{{b.praznoS}}</td>
+			
+			
+			</tr>
+		</tbody>
+	</table>
+
+
+
+</div>

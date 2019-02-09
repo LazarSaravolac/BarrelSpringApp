@@ -1,0 +1,96 @@
+<div  ng-controller="OtpisCtrl">
+
+<div class="page-header">
+		<h1 style="text-align:center">Otpis</h1>
+	</div>
+<div class="container">
+<div class="row">
+<div class="col-lg-6">
+<form>
+		<div class="form-group">
+			<label for="datumPocetka">ID bureta</label>
+			<input class="form-control" id="datumPocetka" placeholder="ID bureta" ng-model="novOtpis.bure">
+		</div>
+		<div class="form-group">
+			<label for="naziv">Naziv</label>
+			<input class="form-control" id="naziv" placeholder="naziv" ng-model="novOtpis.naziv">
+		</div>
+		<div class="form-group">
+			<label for="organizator">Kolicina</label>
+			<input class="form-control" id="organizator" placeholder="Kolicina" ng-model="novOtpis.kolicina">
+		</div>
+		<div class="form-group">
+			<label for="datumPocetka">Datum</label>
+			<input class="form-control" id="datumPocetka" placeholder="Datum" ng-model="novOtpis.ds">
+		</div>
+		<button class="btn btn-primary" ng-click="dodaj()">Dodaj</button>
+
+	</form>
+</div>
+
+
+
+<div class="col-lg-6" ng-show="stvarno.provera">
+<form>
+		<div class="form-group">
+			<label for="datumPocetka">ID bureta</label>
+			<input class="form-control" id="datumPocetka" placeholder="ID bureta" ng-model="izmena.bure">
+		</div>
+		<div class="form-group">
+			<label for="naziv">Naziv</label>
+			<input class="form-control" id="naziv" placeholder="naziv" ng-model="izmena.naziv">
+		</div>
+		<div class="form-group">
+			<label for="organizator">Kolicina</label>
+			<input class="form-control" id="organizator" placeholder="Kolicina" ng-model="izmena.kolicina">
+		</div>
+		<div class="form-group">
+			<label for="datumPocetka">Datum</label>
+			<input class="form-control" id="datumPocetka" placeholder="Datum" ng-model="izmena.ds">
+		</div>
+	
+
+	
+	<button class="btn btn-primary" ng-click="izmeni(izmena.id)">Izmena</button>
+	</form>
+</div>
+
+
+</div>
+</div>
+
+	
+	<form>
+
+<!-- <span ng-show="bre">Auto sa najmanjom potrosnjom : {{autaa.model}}</span> -->
+<div class="btn-group" style="margin-left:80%">
+		
+	</div>
+	<table class="table table-bordered table-striped">
+		<thead>
+			<tr>
+			<th style="border:none">Id</th>
+				<th style="border:none">Naziv</th>
+				<th style="border:none">Kolicina</th>
+				<th style="border:none">Datum</th>
+				<th style="border:none">ID bureta</th>
+			
+	     	</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="o in otpisi">
+				<td style="border:none">{{o.id}}</td>
+				<td style="border:none">{{o.naziv}}</td>
+				<td style="border:none">{{o.kolicina}}</td>
+				<td style="border:none">{{o.datums}}</td>
+				<td style="border:none">{{o.bure}}</td>
+				<td style="border:none"><button class="btn btn-warning" ng-click="goToEdit(o.id)">Izmeni</button></td>
+				<td style="border:none"><button class="btn btn-danger" ng-click="brisanje(o.id)">Obrisi</button></td>
+			
+			</tr>
+		</tbody>
+	</table>
+
+
+
+</div>

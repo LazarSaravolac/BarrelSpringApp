@@ -1,0 +1,157 @@
+<div  ng-controller="buradCtrl">
+
+<div class="page-header">
+		<h1 style="text-align:center">Evidencija buradi</h1>
+	</div>
+<div class="container">
+<div class="row">
+<div class="col-lg-6">
+<form>
+		<div class="form-group">
+			<label for="naziv">Naziv</label>
+			<input class="form-control" id="naziv" placeholder="naziv" ng-model="novoBure.naziv">
+		</div>
+		<div class="form-group">
+			<label for="organizator">Tezina</label>
+			<input class="form-control" id="organizator" placeholder="tezina" ng-model="novoBure.tezina">
+		</div>
+		<div class="form-group">
+			<label for="datumPocetka">Stiglo</label>
+			<input class="form-control" id="datumPocetka" placeholder="stiglo" ng-model="novoBure.ds">
+		</div>
+		<div class="form-group">
+			<label for="cenaKarte">Kacenje</label>
+			<input class="form-control" id="cenaKarte" placeholder="kacenje" ng-model="novoBure.dk">
+		</div>
+		<div class="form-group">
+			<label for="cenaKarte">Istoceno</label>
+			<input class="form-control" id="cenaKarte" placeholder="istoceno" ng-model="novoBure.di">
+		</div>
+		<div class="form-group">
+			<label for="organizator">Tezina praznog</label>
+			<input class="form-control" id="organizator" placeholder="tezina praznog" ng-model="novoBure.tp">
+		</div>
+		<button class="btn btn-primary" ng-click="dodaj()">Dodaj</button>
+
+	</form>
+</div>
+
+
+
+<div class="col-lg-6" ng-show="stvarno.provera">
+<form>
+		<div class="form-group">
+			<label for="naziv">Naziv</label>
+			<input class="form-control" id="naziv" placeholder="naziv" ng-model="izmena.naziv">
+		</div>
+		<div class="form-group">
+			<label for="organizator">Tezina</label>
+			<input class="form-control" id="organizator" placeholder="tezina" ng-model="izmena.tezina">
+		</div>
+		<div class="form-group">
+			<label for="datumPocetka">Stiglo</label>
+			<input class="form-control" id="datumPocetka" placeholder="stiglo" ng-model="izmena.ds">
+		</div>
+		<div class="form-group">
+			<label for="cenaKarte">Kacenje</label>
+			<input class="form-control" id="cenaKarte" placeholder="kacenje" ng-model="izmena.dk">
+		</div>
+		<div class="form-group">
+			<label for="cenaKarte">Istoceno</label>
+			<input class="form-control" id="cenaKarte" placeholder="istoceno" ng-model="izmena.di">
+		</div>
+		<div class="form-group">
+			<label for="organizator">Tezina praznog</label>
+			<input class="form-control" id="organizator" placeholder="tezina praznog" ng-model="izmena.tp">
+		</div>
+	
+	<button class="btn btn-primary" ng-click="izmeni(izmena.id)">Izmena</button>
+	</form>
+</div>
+
+
+</div>
+</div>
+
+	
+	<form>
+
+<!--
+	<div class="form-group">
+			<label for="afnaziv">Model</label>
+			<input class="form-control" id="afnaziv" ng-model="pretraga.model">
+		</div>
+	<div class="form-group">
+			<label for="amax">Godiste od:</label>
+			<input class="form-control" id="amax"  ng-model="pretraga.godiste">
+		</div>
+			<div class="form-group">
+			<label for="amax">Potrosnja do:</label>
+			<input class="form-control" id="amax"  ng-model="pretraga.potrosnja">
+		</div>
+	<div class="form-group">
+			<label for="amesto">Kompanija</label>
+			<select class="form-control" id="amesto" ng-model="pretraga.dajId">
+				
+				<option value="">~Any~</option>
+				<option ng-repeat="ka in kompanije" value="{{ka.id}}">
+					{{ka.naziv}}
+				</option>
+				
+			</select>
+		</div>
+		
+	<div class="form-group">
+			<label for="amax1">Sadrzaj prikazan</label>
+			<input class="form-control" id="amax1"  ng-model="pretraga.velicina">
+		</div>
+		
+	<button class="btn btn-primary" ng-click="filtriraj()">Filtriraj</button>
+	<button class="btn btn-primary" ng-click="reset()">Reset</button>
+	<button class="btn btn-primary" ng-click="pretraziMe()">search</button>
+<br>
+<br>
+-->
+<!-- <span ng-show="bre">Auto sa najmanjom potrosnjom : {{autaa.model}}</span> -->
+<div class="btn-group" style="margin-left:80%">
+		
+	</div>
+	<table class="table table-bordered table-striped">
+		<thead>
+			<tr>
+			<th style="border:none">Id</th>
+				<th style="border:none">Naziv</th>
+				<th style="border:none">Tezina</th>
+				<th style="border:none">Stiglo</th>
+				<th style="border:none">Kacenje</th>
+				<th style="border:none">Istoceno</th>
+				<th style="border:none">Tezina(prazno)</th>
+				<th style="border:none">Otpis</th>
+				<th style="border:none">Dani</th>
+				<th style="border:none">Prazno</th>
+				<th style="border:none;background-color:grey;"><button ng-disabled="page == 0" ng-click="go(-1)" class="btn btn-primary">Prethodna</button></th>
+				<th style="border:none;background-color:grey;"><button ng-disabled="page == totalPages - 1" ng-click="go(1)" class="btn btn-primary">Sledeća</button></th>
+	     	</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="b in burad">
+				<td style="border:none">{{b.id}}</td>
+				<td style="border:none">{{b.naziv}}</td>
+				<td style="border:none">{{b.tezina}}</td>
+				<td style="border:none">{{b.stigloS}}</td>
+				<td style="border:none">{{b.kacenjeS}}</td>
+				<td style="border:none">{{b.istocenoS}}</td>
+				<td style="border:none">{{b.tezinaPrazno}}</td>
+				<td style="border:none">{{b.otpis | number:1}}</td>
+				<td style="border:none">{{b.dani}}</td>
+				<td style="border:none">{{b.praznoS}}</td>
+				<td style="border:none"><button class="btn btn-warning" ng-click="goToEdit(b.id)">Izmeni</button></td>
+				<td style="border:none"><button class="btn btn-danger" ng-click="obrisi(b.id)">Obrisi</button></td>
+			
+			</tr>
+		</tbody>
+	</table>
+
+
+
+</div>

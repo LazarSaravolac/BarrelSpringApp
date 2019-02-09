@@ -1,0 +1,77 @@
+<div  ng-controller="buradCtrl">
+
+<div class="page-header">
+		<h1 style="text-align:center">Pretraga Buradi</h1>
+	</div>
+
+<div class="col-lg-6">
+<form>
+		<div class="form-group">
+			<label for="naziv">Naziv</label>
+			<input class="form-control" id="naziv" placeholder="naziv" ng-model="pretragaBure.naziv">
+		</div>
+		
+		<div class="form-group">
+			<label for="datumPocetka">ID</label>
+			<input class="form-control" id="datumPocetka" placeholder="ID" ng-model="pretragaBure.id">
+		</div>
+		<div class="form-group">
+			<label for="cenaKarte">Datum od</label>
+			<input class="form-control" id="cenaKarte" placeholder="Datum od" ng-model="pretragaBure.od">
+		</div>
+		<div class="form-group">
+			<label for="cenaKarte">Datum do</label>
+			<input class="form-control" id="cenaKarte" placeholder="Datum do" ng-model="pretragaBure.doo">
+		</div>
+		<div class="form-group">
+			<label for="organizator">Odredjen dan</label>
+			<input class="form-control" id="organizator" placeholder="Odredjen dan" ng-model="pretragaBure.dan">
+		</div>
+		<button class="btn btn-primary" ng-click="pretrazi()">Pretraga</button>
+		<button class="btn btn-primary" ng-click="reset()">Reset</button>
+
+	</form>
+</div>
+
+<!-- <span ng-show="bre">Auto sa najmanjom potrosnjom : {{autaa.model}}</span> -->
+<div class="btn-group" style="margin-left:80%">
+		
+	</div>
+	<table class="table table-bordered table-striped">
+		<thead>
+			<tr>
+			<th style="border:none">Id</th>
+				<th style="border:none">Naziv</th>
+				<th style="border:none">Tezina</th>
+				<th style="border:none">Stiglo</th>
+				<th style="border:none">Kacenje</th>
+				<th style="border:none">Istoceno</th>
+				<th style="border:none">Tezina(p)</th>
+				<th style="border:none">Otpis</th>
+				<th style="border:none">Dani</th>
+				<th style="border:none">Prazno</th>
+				<th style="border:none"><button ng-disabled="page == 0" ng-click="go(-1)" class="btn btn-primary">Prethodna</button></th>
+				<th style="border:none"><button ng-disabled="page == totalPages - 1" ng-click="go(1)" class="btn btn-primary">Sledeća</button></th>
+	     	</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="b in burad">
+				<td style="border:none">{{b.id}}</td>
+				<td style="border:none">{{b.naziv}}</td>
+				<td style="border:none">{{b.tezina}} kg</td>
+				<td style="border:none">{{b.stigloS}}</td>
+				<td style="border:none">{{b.kacenjeS}}</td>
+				<td style="border:none">{{b.istocenoS}}</td>
+				<td style="border:none">{{b.tezinaPrazno}} kg</td>
+				<td style="border:none">{{b.otpis | number:1}} L</td>
+				<td style="border:none">{{b.dani}}</td>
+				<td style="border:none">{{b.praznoS}}</td>
+			
+			
+			</tr>
+		</tbody>
+	</table>
+
+
+
+</div>

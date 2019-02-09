@@ -1,0 +1,127 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f3f5;
+  }
+
+  .navbar {
+    
+    background: #3a3939;
+  }
+  .navbar-brand {
+   
+    padding: 12px 20px;
+    font-style: italic;
+    color:#F15025;
+    font-size: 2rem;
+    text-decoration: none;
+  }
+  .navbar-brand:hover{
+      color: white;
+  }
+
+  .narandzasta{
+      color: #F15025;
+  }
+  .no-padding{
+      padding: 0;
+  }
+
+  
+  .nav-link{
+      padding: 5px;
+      color: #F15025;
+      font-size: 20px;
+      margin-right:20px; 
+      display: inline-block;  
+  }
+
+  .nav-link:hover{
+    display: inline-block;  
+    background: #F15025;
+      
+      color:white;
+  }
+
+.visina-85{
+    min-height: 85vh;
+}
+.visina-100{
+    min-height: 100vh;
+}
+
+.banner{
+    background:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/current-projects-1.jpeg') center/cover fixed no-repeat;
+}
+
+
+
+  #banner-icons i,p{
+      color:white;
+  }
+
+
+  .title-textina{
+      font-size: 50px;
+  }
+
+
+ 
+
+  
+  .visina-55{
+      min-height: 55vh;
+     
+  }
+
+
+  .btn{
+    margin-right: 10px;
+    background: #3a3939;
+    color: #F15025;
+    padding: 15px 25px;
+  }
+
+  
+  
+
+  #cv {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(images/background-filler-2.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+   
+  
+  }
+  
+  .primary-color-background {
+    background-color: #f15025;
+  }
+
+  .kocka{
+      border: 3px solid #F15025;
+      padding: 20px;
+      border-radius: 3px;
+  }
+
+  #kontakt i{
+      color: #f15025;
+  }
+
+  .title .fa {
+    font-size: 60px;
+    color: #f15025;
+  }
+
+  .no-margin{
+      margin:0!important;
+      padding-right: 10px!important;
+  }
+  
+@media only screen and (max-width: 980px) {
+    .paja{
+    margin-left: 90%!important;
+    }
+}
+
